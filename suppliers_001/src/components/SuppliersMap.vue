@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <!-- <h1>{{ msg }}</h1> -->
+    <h1>{{ message }}</h1>
+    <div>
+      <img alt="Vue logo" src=".././assets/Terre_500_01.jpg">
+    </div>
     <p>
       Pour une liste complete de nos tarifs,<br>
       consultez
@@ -8,11 +12,18 @@
     </p>
   </div>
 </template>
+
 <script>
 export default {
-  name: 'SuppliersMap',
+  name: 'Carte',
   props: {
     msg: String
+  },
+  data(){
+    return{
+      message: 'Carte des fournisseurs',
+      // img: '.././assets/Blockchain_Logo_250_250_001.png'
+    }
   }
 }
 </script>

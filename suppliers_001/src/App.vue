@@ -7,39 +7,56 @@
     <div>
       <h3>Suppliers Options</h3>
       <ul>
-        <li><a @click="onSuppliersListClick">Suppliers list</a></li>
+        <li><a @click="onListClick">Suppliers list</a></li>
         <li><a @click="onMapClick">Suppliers map</a></li>
       </ul>
     </div>
     <div>
-      <SuppliersList msg="Liste des fournisseurs"/>
-      <img alt="Vue logo" src="./assets/CryptoDox_Blockchain_400_226_001.png">
+      <!-- <SuppliersList msg="Liste des fournisseurs"/> -->
+      <!-- <router-link to="/Liste">List</router-link> -->
+      <!-- <img alt="Vue logo" src="./assets/CryptoDox_Blockchain_400_226_001.png"> -->
+      <router-view></router-view>
     </div>
     <div>
-      <SuppliersMap msg="Carte des fournisseurs"/>
-      <img alt="Vue logo" src="./assets/Terre_500_01.jpg">
+      <!-- <SuppliersMap msg="Carte des fournisseurs"/> -->
+      <!-- <router-link to="/Carte">Map</router-link> -->
+      <!-- <img alt="Vue logo" src="./assets/Terre_500_01.jpg"> -->
+    </div>
+    <div>
+    <!-- <router-view></router-view> -->
     </div>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
-import SuppliersList from './components/SuppliersList.vue';
-import SuppliersMap from './components/SuppliersMap.vue';
+// import Liste from './components/SuppliersList.vue';
+// import Carte from './components/SuppliersMap.vue';
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
-    SuppliersList,
-    SuppliersMap,
+    // Liste,
+    // Carte,
+  },
+    computed: {
+    username () {
+      // Nous verrons ce que représente `params` dans un instant.
+      return this.$route.params.username
+    }
   },
   methods: {
-        onSuppliersListClick: function() {
+        onListClick: function() {
         window.alert('UserClikerList !')
     },
         onMapClick: function(){
         window.alert('UserClikerMap !')
+    },
+        goBack () {
+        window.history.length > 1
+          ? this.$router.go(-1)
+          : this.$router.push('/')
     }
   }
 }

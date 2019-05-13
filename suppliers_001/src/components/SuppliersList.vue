@@ -1,8 +1,10 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <!-- <h1>{{ msg }}</h1> -->
+    <h1>{{ message }}</h1>
     <div>
-      <!-- <img alt="Vue logo" src="./assets/Blockchain_Logo_250_250_001.png"> -->
+      <img alt="Vue logo" src=".././assets/CryptoDox_Blockchain_500_130_004.jpg">
+      <!-- <img alt="Vue logo" :src="img"> -->
     </div>
     <p>
       Notice d'utilisation,<br>
@@ -14,9 +16,14 @@
 
 <script>
 export default {
-  name: 'SuppliersList',
+  name: 'Liste',
   props: {
     msg: String
+  },
+  data(){
+    return{
+      message: 'Liste des fournisseurs'
+    }
   }
 }
 </script>
