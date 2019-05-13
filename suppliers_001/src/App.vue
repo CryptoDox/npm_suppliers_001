@@ -1,21 +1,28 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <div>
       <img alt="Vue logo" src="./assets/Blockchain_Logo_250_250_001.png">
       <HelloWorld msg="Welcome to GEO Loc suppliers"/>
-    </div>
-    <div>
-      <h3>Suppliers Options</h3>
-      <ul>
-        <li><a @click="onListClick">Suppliers list</a></li>
-        <li><a @click="onMapClick">Suppliers map</a></li>
-      </ul>
+          <br />
+    <p>
+      <b-btn v-b-toggle.collapse1 variant="warning">Menu</b-btn>
+    </p>
+        <b-collapse id="collapse1">
+      <b-card>
+        <router-view></router-view>
+        <h3>Suppliers Options</h3>
+        <b-btn v-b-toggle.collapse2 size="sm">Afficher les options</b-btn>
+        <b-collapse id=collapse2 class="mt-2">
+          <b-card><a @click="onListClick">Suppliers list</a></b-card>
+          <b-card><a @click="onMapClick">Suppliers map</a></b-card>
+        </b-collapse>
+      </b-card>
+    </b-collapse>
     </div>
     <div>
       <!-- <SuppliersList msg="Liste des fournisseurs"/> -->
       <!-- <router-link to="/Liste">List</router-link> -->
       <!-- <img alt="Vue logo" src="./assets/CryptoDox_Blockchain_400_226_001.png"> -->
-      <router-view></router-view>
     </div>
     <div>
       <!-- <SuppliersMap msg="Carte des fournisseurs"/> -->
